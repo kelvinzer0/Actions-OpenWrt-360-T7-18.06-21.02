@@ -53,6 +53,12 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+    
+    - name: Install Python3 dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y python3-distutils python3-setuptools
+    
 
     - name: Clone source code
       working-directory: /workdir
